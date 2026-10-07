@@ -3,7 +3,7 @@ export type Asset = { symbol: string; name: string; amount: number; price: numbe
 export type Snapshot = { day: string; value: number; index: number; flow: number; recordedAt: string };
 export type Connection = { id: string; type: 'binance' | 'upbit' | 'ethereum'; label: string; status: string; error?: string | null; lastSync?: string | null };
 export type Portfolio = { mode: 'demo' | 'live'; assets: Asset[]; history: Snapshot[]; connections: Connection[]; updatedAt: string | null; warnings: string[]; profile: string; job?: { status: string; finishedAt: string } | null };
-export const categories: Record<Category, { label: string; color: string }> = { bitcoin: { label: '비트코인', color: '#bbec58' }, ethereum: { label: '이더리움', color: '#afa3f5' }, alt: { label: '기타 알트', color: '#79b7ef' }, cash: { label: '현금성 자산', color: '#e4e6e9' } };
+export const categories: Record<Category, { label: string; color: string }> = { bitcoin: { label: '비트코인', color: '#67cce7' }, ethereum: { label: '이더리움', color: '#afa0ef' }, alt: { label: '기타 알트', color: '#f4c478' }, cash: { label: '현금성 자산', color: '#99aecd' } };
 export const coinNames: Record<string,string> = { BTC:'Bitcoin',ETH:'Ethereum',SOL:'Solana',USDT:'Tether',USDC:'USD Coin',BNB:'BNB',XRP:'XRP',ADA:'Cardano',DOGE:'Dogecoin',AVAX:'Avalanche',LINK:'Chainlink',DOT:'Polkadot',DAI:'Dai',KRW:'대한민국 원',FDUSD:'First Digital USD',SUI:'Sui',TRX:'TRON' };
 export function classify(symbol:string):Category { return symbol==='BTC' || symbol==='WBTC' ? 'bitcoin' : symbol==='ETH' || symbol==='WETH' ? 'ethereum' : ['USDT','USDC','DAI','FDUSD','TUSD','USDP','PYUSD','KRW','USD','EUR'].includes(symbol) ? 'cash' : 'alt'; }
 export const profiles: Record<string,{ label:string; description:string; weights:Record<Category,number> }> = {
