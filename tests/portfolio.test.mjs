@@ -1,0 +1,11 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { allocation, classify, demoPortfolio, koreaDay, nextIndex, profiles, totalValue } from '../lib/portfolio.ts';
+const previous={day:'2026-10-06',value:1000,index:100,flow:0,recordedAt:'2026-10-06T00:00:00Z'};
+test('deposit does not inflate returns',()=>assert.equal(nextIndex(previous,1500,500),100));
+test('withdrawal does not create a loss',()=>assert.equal(nextIndex(previous,750,-250),100));
+test('compounded returns reflect price changes after cash flow',()=>{const index=nextIndex(previous,1600,500);assert.ok(Math.abs(index-110)<1e-10);assert.equal(nextIndex({...previous,value:1600,index},1600,0),index);});
+test('invalid values are rejected instead of manufacturing returns',()=>{assert.throws(()=>nextIndex(previous,100,200));assert.throws(()=>nextIndex(previous,NaN,0));});
+test('ETH stays separate and cash includes fiat and stablecoins',()=>{assert.equal(classify('ETH'),'ethereum');assert.equal(classify('KRW'),'cash');assert.equal(classify('USDC'),'cash');assert.equal(classify('WBTC'),'bitcoin');assert.equal(classify('SOL'),'alt');});
+test('allocation and every model sum to 100 percent',()=>{const demo=demoPortfolio();assert.ok(Math.abs(Object.values(allocation(demo.assets)).reduce((n,v)=>n+v,0)-100)<1e-9);assert.equal(totalValue([]),0);for(const p of Object.values(profiles))assert.equal(Object.values(p.weights).reduce((n,v)=>n+v,0),100);});
+test('KST snapshot boundary is independent of the host timezone',()=>{assert.equal(koreaDay(Date.parse('2026-10-06T14:59:59Z')),'2026-10-06');assert.equal(koreaDay(Date.parse('2026-10-06T15:00:00Z')),'2026-10-07');});

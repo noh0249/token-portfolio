@@ -1,0 +1,248 @@
+{
+  "provider": "CoinMarketCap",
+  "retrievedAt": "2026-10-07T11:43:49.694Z",
+  "method": "Logo URLs extracted from og:image metadata of the verified asset pages; PNG signature and dimensions checked.",
+  "assets": {
+    "AAVE": {
+      "pageUrl": "https://coinmarketcap.com/currencies/aave/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/7278.png",
+      "file": "/coins/aave.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "c1ae2a57eb283a21eac30ac93f7f1a95b9aeeee227d3441af52507364895a702"
+    },
+    "ADA": {
+      "pageUrl": "https://coinmarketcap.com/currencies/cardano/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/2010.png",
+      "file": "/coins/ada.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "2b8352c44ebc6ae5d6c01adfbda204d9ee8e93e2a006f3b084dc8aee62193ef2"
+    },
+    "APT": {
+      "pageUrl": "https://coinmarketcap.com/currencies/aptos/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/21794.png",
+      "file": "/coins/apt.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "88d38e4d9b40e8cf6534266d17ac3de9b4ad88b3829a955d9e25996c7de29935"
+    },
+    "ARB": {
+      "pageUrl": "https://coinmarketcap.com/currencies/arbitrum/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/11841.png",
+      "file": "/coins/arb.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "b7958ef9dd831d80ff1c5eec83321df835aa1e9028b8ac69223fdbb8ebb61b15"
+    },
+    "AVAX": {
+      "pageUrl": "https://coinmarketcap.com/currencies/avalanche/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/5805.png",
+      "file": "/coins/avax.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "824642d8fb8830ea91f64385979d9bfc9bf8bb8ff9a922b132ebe45687bebb97"
+    },
+    "BCH": {
+      "pageUrl": "https://coinmarketcap.com/currencies/bitcoin-cash/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/1831.png",
+      "file": "/coins/bch.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "f5f8e97c6dcaa778ea7be938ee82af2243e2e536afeac5c1e178075459aa1cc9"
+    },
+    "BNB": {
+      "pageUrl": "https://coinmarketcap.com/currencies/bnb/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/1839.png",
+      "file": "/coins/bnb.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "58bc616e0574171b6cbba2d678ad83bc68c6f00142a093947d6645b8e5e8a422"
+    },
+    "BTC": {
+      "pageUrl": "https://coinmarketcap.com/currencies/bitcoin/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/1.png",
+      "file": "/coins/btc.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "4502167f2c8721790d247085fa1b0394f3635782146ef69c9d955222ebc9ee86"
+    },
+    "DAI": {
+      "pageUrl": "https://coinmarketcap.com/currencies/multi-collateral-dai/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/4943.png",
+      "file": "/coins/dai.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "9795e4eba0822f4141998a43290e157a5c341f0bd8a70dd6d114747abdde347c"
+    },
+    "DOGE": {
+      "pageUrl": "https://coinmarketcap.com/currencies/dogecoin/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/74.png",
+      "file": "/coins/doge.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "dd4d35bc0a2d2610f4a8038ec505bd50a6e0ac015f6be5567a2d1bca0d874f49"
+    },
+    "DOT": {
+      "pageUrl": "https://coinmarketcap.com/currencies/polkadot-new/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/6636.png",
+      "file": "/coins/dot.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "4e409c12eb62271af6bdc7c50169fe01c44dec1550c4804bba471120b5249550"
+    },
+    "ETH": {
+      "pageUrl": "https://coinmarketcap.com/currencies/ethereum/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/1027.png",
+      "file": "/coins/eth.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "34b28a2166ef83580a4b4b1f8fb4526dff8ef0d047f1f7c7efc16e0d732c5ac1"
+    },
+    "FDUSD": {
+      "pageUrl": "https://coinmarketcap.com/currencies/first-digital-usd/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/26081.png",
+      "file": "/coins/fdusd.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "7a9f52864ad5ec7146e8c39549d33aed5ab3c80372a4f4c4037d9e9e8306682f"
+    },
+    "LINK": {
+      "pageUrl": "https://coinmarketcap.com/currencies/chainlink/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/1975.png",
+      "file": "/coins/link.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "f198dcb2395257ce348cc13257c9e0dd040b662afcbb888afcaa07d06cfb2862"
+    },
+    "LTC": {
+      "pageUrl": "https://coinmarketcap.com/currencies/litecoin/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/2.png",
+      "file": "/coins/ltc.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "d80e2fd5ec30d5e915e0e3e3623b43dea0a8f361c04074117ccb9ad551b8aac1"
+    },
+    "NEAR": {
+      "pageUrl": "https://coinmarketcap.com/currencies/near-protocol/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/6535.png",
+      "file": "/coins/near.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "c0f1891dca210f101f36477d0b55b0b69aed6feef97f66f93466b3dd5c281373"
+    },
+    "OP": {
+      "pageUrl": "https://coinmarketcap.com/currencies/optimism-ethereum/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/11840.png",
+      "file": "/coins/op.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "3e3eee13f1ae7a9f3395094c415073580805e94eba29bee7de6ca3fb1f841360"
+    },
+    "PYUSD": {
+      "pageUrl": "https://coinmarketcap.com/currencies/paypal-usd/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/27772.png",
+      "file": "/coins/pyusd.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "502a41884d7e4844bc2a68449024b50ceadc6175658f72533c82d2f65cc4888c"
+    },
+    "SOL": {
+      "pageUrl": "https://coinmarketcap.com/currencies/solana/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/5426.png",
+      "file": "/coins/sol.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "e92f8bb03de451ae9d13c60e382829bfc240a65519dd2c809f0596ff05cc409b"
+    },
+    "SUI": {
+      "pageUrl": "https://coinmarketcap.com/currencies/sui/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/20947.png",
+      "file": "/coins/sui.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "778344dcc7c13f96a1d2e2acdcd6409ba7a1fd17153fe24477446e56d5e2ad48"
+    },
+    "TON": {
+      "pageUrl": "https://coinmarketcap.com/currencies/gram/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/11419.png",
+      "file": "/coins/ton.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "f3e49df4036c5604a5c16930c722f242bb91efc50d9117da81d62b4b0ec29f53",
+      "note": "The official Toncoin page redirects to Gram (prev. Toncoin), the same project UCID 11419; retained under supported legacy ticker TON."
+    },
+    "TRX": {
+      "pageUrl": "https://coinmarketcap.com/currencies/tron/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/1958.png",
+      "file": "/coins/trx.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "9a47e90ea9eeb7b7b1d33c948bddbed94baee9b7f774637b9912e38140eae09b"
+    },
+    "TUSD": {
+      "pageUrl": "https://coinmarketcap.com/currencies/trueusd/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/2563.png",
+      "file": "/coins/tusd.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "f534d7175bb125959af05b6382aaef0fcd02edd2584938e5d7f2e3d6588b36d3"
+    },
+    "UNI": {
+      "pageUrl": "https://coinmarketcap.com/currencies/uniswap/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/7083.png",
+      "file": "/coins/uni.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "8a5d96916aadaebccfccf48b045863ae6ddd9cdee9ca99e66278c01a6d6ea6af"
+    },
+    "USDC": {
+      "pageUrl": "https://coinmarketcap.com/currencies/usd-coin/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/3408.png",
+      "file": "/coins/usdc.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "822f01dd365dc194e5192543a6f75d952c9607d22b8113d1b7dfd40d22897422"
+    },
+    "USDP": {
+      "pageUrl": "https://coinmarketcap.com/currencies/paxos-standard/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/3330.png",
+      "file": "/coins/usdp.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "ed72b32d4f9722335661d02234d17adba3dc0ea68e8f19345050fbb1cdb841cb"
+    },
+    "USDT": {
+      "pageUrl": "https://coinmarketcap.com/currencies/tether/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/825.png",
+      "file": "/coins/usdt.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "53ac669263e006ddb85ab0d9dec87cccd5a4c91d678a4cbccf53262ffbbc1b42"
+    },
+    "WBTC": {
+      "pageUrl": "https://coinmarketcap.com/currencies/wrapped-bitcoin/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/3717.png",
+      "file": "/coins/wbtc.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "8ab0142c2532884620560d4fffe1e33a27092c398a2d0279554d3740f1e806ea"
+    },
+    "WETH": {
+      "pageUrl": "https://coinmarketcap.com/currencies/weth/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/2396.png",
+      "file": "/coins/weth.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "8a6c115282a7977d3812d201bcddc496d3fe8b3380ca1de241c04658d4aa839f"
+    },
+    "XRP": {
+      "pageUrl": "https://coinmarketcap.com/currencies/xrp/",
+      "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/52.png",
+      "file": "/coins/xrp.png",
+      "width": 200,
+      "height": 200,
+      "sha256": "a096df1d83b6551fb6256c09172c77c6d53968302520517f4ddb115d10652559"
+    }
+  }
+}
