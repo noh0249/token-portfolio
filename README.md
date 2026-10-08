@@ -2,17 +2,14 @@
 
 개인 코인 포트폴리오 대시보드. 한국어·영어 전환, 모바일 하단 탐색, SVG 3D 도넛 차트, USDT 평가액, 일별 스냅샷과 입출금 조정 수익률을 제공합니다. 언어 선택만 브라우저에 저장합니다. 코인 로고는 CoinMarketCap 공식 페이지에서 확인해 로컬 파일로 제공하며 출처는 `public/coins/sources.json`에 기록합니다.
 
-공개 GitHub 소스: `https://github.com/noh0249/token-portfolio`
-
-실제 API 키, 지갑 정보, 저장소 데이터 및 운영 사이트 식별자는 포함하지 않습니다. 커밋 작성자에는 GitHub 비공개 이메일을 사용합니다.
+프로젝트 폴더: `C:\Coinfolio`
 
 ## 시작하기
 
 Node.js 22.13 이상이 필요합니다.
 
 ```powershell
-git clone https://github.com/noh0249/token-portfolio.git
-cd token-portfolio
+cd C:\Coinfolio
 npm install
 npm run dev
 ```
@@ -53,7 +50,7 @@ Binance 현물 잔고와 Simple Earn Flexible API에서 확인된 LD 자산의 �
 
 ## 로컬 저장소와 환경변수
 
-실제 Worker 환경변수는 사용하는 호스팅 플랫폼의 비밀 설정에 등록하세요. 로컬 환경은 Git에서 제외된 `.dev.vars` 파일을 읽습니다. `.env.example`에는 변수 이름과 자리표시자만 들어 있습니다. 개발·빌드 명령은 `.openai/hosting.example.json`을 로컬 `.openai/hosting.json`으로 준비하며, 운영 프로젝트 ID는 이 로컬 파일에만 설정하세요. 새로운 체크아웃에서 `.env.example`에 나온 키 이름을 사용해 `.dev.vars`를 준비하세요.
+실제 Worker 환경변수는 호스팅 플랫폼에 등록되어 있습니다. 로컬 환경은 Git에서 제외된 `.dev.vars` 파일을 읽습니다. 새로운 체크아웃에서 `.env.example`에 나온 키 이름을 사용해 `.dev.vars`를 준비하세요.
 
 `KEY_ENCRYPTION_SECRET`은 32자 이상의 무작위 값이며 암호화 키입니다. 임의로 변경하면 이전에 저장한 API 키를 복호화할 수 없습니다. `.dev.vars`, `.env`, 데이터베이스 파일은 Git에 커밋하지 않습니다. `COINGECKO_API_KEY`는 선택적 fallback 시세 조회용입니다.
 
@@ -76,11 +73,12 @@ node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1
 
 ## Git와 검증
 
-사이트 소스는 Git 저장소로 관리됩니다. 공개용 소스는 새로운 초기 커밋부터 시작합니다. 기존 배포용 저장소의 개인 이메일과 운영 배포 식별자를 포함한 이력은 가져오지 않습니다. 실제 환경 파일, 로컬 DB, 개인키와 빌드 결과는 `.gitignore`로 제외합니다.
+사이트 소스는 Git 저장소로 관리됩니다. 현재 관리형 배포 원격 저장소를 사용합니다. GitHub로도 관리하려면 본인의 저장소 URL을 별도 remote로 추가하세요.
 
 ```powershell
-git status
-git push origin main
+git remote -v
+git remote add github https://github.com/YOUR_NAME/YOUR_REPOSITORY.git
+git push -u github main
 node --test tests/*.test.mjs
 npx tsc --noEmit --incremental false
 ```
@@ -96,3 +94,16 @@ npx tsc --noEmit --incremental false
 - [Investor.gov 자산 배분과 위험 감수 수준](https://www.investor.gov/introduction-investing/getting-started/asset-allocation)
 
 - [Coinbase 공개 환율 API](https://api.coinbase.com/v2/exchange-rates?currency=USDT)
+
+
+## Wallet tokens, NFTs and personal identity
+
+Ethereum mainnet wallets discover ERC-20 tokens and ERC-721/1155 NFTs through paginated Blockscout data. Known contracts retain their verified identity; unrelated tokens with matching symbols are never merged or priced as a stablecoin. DEX Screener prices are matched by chain and base-token contract, using a liquid active pool. Quotes in USD use a verified USDT conversion. LP and protocol staking positions are outside this wallet-balance scope.
+
+NFTs use OpenSea collection-floor prices as reference estimates, not individual sale prices. NFTs worth at least 5 USDT appear in the gallery; other priced assets worth 5 USDT or less are hidden. Unpriced discovered wallet assets are excluded from totals. All owned NFTs with supported images remain available in the profile-image picker regardless of value. Reference allocation models apply to coin assets, separately from NFTs.
+
+OpenSea documents account-free API keys that expire after seven days. The server obtains and encrypts a key when available and respects rate limits without rotating valid keys to evade quotas. If issuance or pricing is unavailable, Connections accepts a user-supplied OpenSea API key through an authenticated form. API keys, wallet addresses, token contracts, NFT token identifiers and remote image URLs never appear in portfolio read responses. NFT images use an authenticated same-origin proxy restricted to approved HTTPS image sources and raster content with a 4 MiB limit.
+
+A new D1 migration adds encrypted NFT preferences and a snapshot valuation basis. The first daily record after wallet/NFT coverage expands preserves the prior return index; subsequent records compound normally. Legacy snapshots retain their original values and basis.
+
+Data references: https://docs.opensea.io/reference/get_collection_stats, https://docs.opensea.io/reference/api-keys, https://docs.dexscreener.com/api/reference, https://github.com/blockscout/agent-skills/blob/main/blockscout-analysis/references/blockscout-api/addresses.md

@@ -1,7 +1,7 @@
 import { base64url, hex, hmac } from './crypto';
 import { binanceEndpoint, binanceFailure, binanceTransportFailure, type BinanceStage } from './binance-errors';
 import { reconcileBinanceEarn, type EarnPosition } from './binance-earn';
-export type Balance={symbol:string;amount:number};
+export type Balance={symbol:string;amount:number;identity?:string;kind?:'token'|'nft';contract?:string;tokenId?:string;name?:string;collection?:string;imageUrl?:string;quoteUsd?:number;quoteAmount?:number;quoteCurrency?:string;change?:number|null;market?:'DEX';trusted?:boolean};
 export class ProviderError extends Error { constructor(message:string){super(message);} }
 async function request<T>(url:string,init?:RequestInit,binanceStage?:BinanceStage):Promise<T>{let r:Response;try{r=await fetch(url,{...init,redirect:'manual',signal:AbortSignal.timeout(12000)});}catch(cause){throw new ProviderError(binanceStage?binanceTransportFailure(cause,binanceStage):'네트워크 연결에 실패했습니다. 잠시 후 다시 동기화하세요.');}if(!r.ok){if(binanceStage)throw new ProviderError(await binanceFailure(r,binanceStage));if(r.status===401||r.status===403)throw new ProviderError('API 키, 잔고 조회 권한과 허용 IP를 확인하세요.');if(r.status===418||r.status===429)throw new ProviderError('거래소 요청 한도를 초과했습니다. 잠시 후 다시 시도하세요.');if(r.status===451)throw new ProviderError('현재 서버 지역에서 거래소 접근이 제한됩니다.');throw new ProviderError(`잔고 조회에 실패했습니다 (${r.status}). 연결 설정을 확인하세요.`);}return await r.json() as T;}
 export async function binanceBalances(apiKey:string,secret:string):Promise<Balance[]>{
