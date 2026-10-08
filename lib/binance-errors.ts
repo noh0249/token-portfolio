@@ -1,4 +1,4 @@
-export type BinanceStage = 'time' | 'account';
+export type BinanceStage = 'time' | 'account' | 'earn';
 
 const explanations: Record<number, string> = {
   [-2014]: '바이낸스 API Key 형식이 올바르지 않습니다. 시스템 생성 HMAC 키인지 확인하세요.',

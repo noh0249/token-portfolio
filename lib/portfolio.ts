@@ -5,7 +5,7 @@ export type Connection = { id: string; type: 'binance' | 'upbit' | 'ethereum'; l
 export type Portfolio = { mode: 'demo' | 'live'; assets: Asset[]; history: Snapshot[]; connections: Connection[]; updatedAt: string | null; warnings: string[]; profile: string; job?: { status: string; finishedAt: string } | null };
 export const categories: Record<Category, { label: string; color: string }> = { bitcoin: { label: '비트코인', color: '#67cce7' }, ethereum: { label: '이더리움', color: '#afa0ef' }, alt: { label: '기타 알트', color: '#f4c478' }, cash: { label: '현금성 자산', color: '#99aecd' } };
 export const coinNames: Record<string,string> = { BTC:'Bitcoin',ETH:'Ethereum',SOL:'Solana',USDT:'Tether',USDC:'USD Coin',BNB:'BNB',XRP:'XRP',ADA:'Cardano',DOGE:'Dogecoin',AVAX:'Avalanche',LINK:'Chainlink',DOT:'Polkadot',DAI:'Dai',KRW:'대한민국 원',FDUSD:'First Digital USD',SUI:'Sui',TRX:'TRON' };
-export function classify(symbol:string):Category { return symbol==='BTC' || symbol==='WBTC' ? 'bitcoin' : symbol==='ETH' || symbol==='WETH' ? 'ethereum' : ['USDT','USDC','DAI','FDUSD','TUSD','USDP','PYUSD','KRW','USD','EUR'].includes(symbol) ? 'cash' : 'alt'; }
+export function classify(symbol:string):Category { return symbol==='BTC' || symbol==='WBTC' ? 'bitcoin' : symbol==='ETH' || symbol==='WETH' ? 'ethereum' : ['USDT','USDC','DAI','FDUSD','TUSD','USDP','PYUSD','USD1','KRW','USD','EUR'].includes(symbol) ? 'cash' : 'alt'; }
 export const profiles: Record<string,{ label:string; description:string; weights:Record<Category,number> }> = {
   cautious:{label:'현금 확보형',description:'가격 변동에 대비해 현금성 자산을 더 많이 확보하는 참고 모델',weights:{bitcoin:35,ethereum:15,alt:10,cash:40}},
   balanced:{label:'균형형',description:'비트코인을 중심으로 알트와 현금성 자산을 나누는 참고 모델',weights:{bitcoin:45,ethereum:20,alt:10,cash:25}},
