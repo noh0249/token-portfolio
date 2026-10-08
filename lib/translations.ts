@@ -86,6 +86,17 @@ export const english: Record<string, string> = {
   "보유량": "Balance",
   "현재 가격": "Current price",
   "보관 위치": "Held in",
+  '바이낸스 API Key 형식이 올바르지 않습니다. 시스템 생성 HMAC 키인지 확인하세요.':'Invalid Binance API key format. Check that you are using a system-generated HMAC key.',
+  '바이낸스가 API 키 인증을 거부했습니다. 키의 활성 상태, 잔고 조회 권한과 허용 IP를 확인하세요.':'Binance rejected API key authentication. Check that the key is active and has balance-reading permissions and the correct IP settings.',
+  '바이낸스 서명이 일치하지 않습니다. 동일한 HMAC API Key와 Secret Key 조합인지 확인하세요.':'The Binance signature does not match. Check that the HMAC API key and secret belong to the same key pair.',
+  '바이낸스 요청 시간이 허용 범위를 벗어났습니다. 잠시 후 다시 동기화하세요.':'The Binance request timestamp is outside the allowed window. Try syncing again shortly.',
+  '바이낸스 요청 한도를 초과했습니다. 잠시 후 다시 시도하세요.':'Binance rate limit reached. Try again shortly.',
+  '현재 조회 서버 지역에서 바이낸스 접근이 제한됩니다. 조회 서버의 배포 지역을 확인해야 합니다.':'Binance restricts access from this server region. The balance server deployment region needs to be checked.',
+  '바이낸스가 API 키 없이 호출한 서버 시간 조회를 차단했습니다. 조회 서버의 접근 제한을 확인해야 합니다.':'Binance blocked the public server-time request before any API key was used. The balance server access restrictions need to be checked.',
+  '바이낸스 방화벽이 잔고 조회 요청을 차단했습니다. 조회 서버의 접근 제한을 확인해야 합니다.':'The Binance firewall blocked the balance request. The balance server access restrictions need to be checked.',
+  '바이낸스 인증 요청이 거부됐습니다. HMAC API Key와 Secret Key의 조합을 확인하세요.':'Binance rejected authentication. Check the HMAC API key and secret pair.',
+  '바이낸스 잔고 조회에 실패했습니다. 잠시 후 다시 동기화하세요.':'Unable to read Binance balances. Try syncing again shortly.',
+  '바이낸스 서버 시간 응답이 올바르지 않습니다. 잠시 후 다시 동기화하세요.':'Binance returned an invalid server time. Try syncing again shortly.',
 };
 
 export function translate(text: string, locale: Locale, values: Record<string, string | number> = {}): string {
