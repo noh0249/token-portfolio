@@ -1,11 +1,12 @@
 import { runtime } from './storage';
+import { binanceEndpoint } from './binance-errors';
 const ids:Record<string,string>={BTC:'bitcoin',WBTC:'wrapped-bitcoin',ETH:'ethereum',WETH:'weth',SOL:'solana',USDT:'tether',USDC:'usd-coin',DAI:'dai',BNB:'binancecoin',XRP:'ripple',ADA:'cardano',DOGE:'dogecoin',AVAX:'avalanche-2',LINK:'chainlink',DOT:'polkadot',SUI:'sui',TRX:'tron',TON:'the-open-network',UNI:'uniswap',LTC:'litecoin',BCH:'bitcoin-cash',AAVE:'aave',NEAR:'near',APT:'aptos',ARB:'arbitrum',OP:'optimism',FDUSD:'first-digital-usd',TUSD:'true-usd',USDP:'paxos-standard',PYUSD:'paypal-usd'};
 type Price={price:number;change:number|null};
 async function json<T>(url:string,headers?:Record<string,string>):Promise<T>{const r=await fetch(url,{headers:{Accept:'application/json',...headers},signal:AbortSignal.timeout(12000)});if(!r.ok)throw Error(`시세 조회가 실패했습니다 (${r.status}).`);return await r.json() as T;}
 export async function pricesFor(symbols:string[]):Promise<Record<string,Price>>{
  const prices:Record<string,Price>={USDT:{price:1,change:0}};
  const results=await Promise.allSettled([
-  json<{symbol:string;lastPrice:string;priceChangePercent:string}[]>('https://data-api.binance.vision/api/v3/ticker/24hr'),
+  json<{symbol:string;lastPrice:string;priceChangePercent:string}[]>('https://data-api.binance.vision/api/v3/ticker/24hr').catch(async()=>{const endpoint=await binanceEndpoint();if('error' in endpoint)throw new Error('Binance market data unavailable');return json<{symbol:string;lastPrice:string;priceChangePercent:string}[]>(`${endpoint.baseUrl}/api/v3/ticker/24hr`);}),
   json<Record<string,{usd?:number;krw?:number;eur?:number;usd_24h_change?:number}>>(`https://api.coingecko.com/api/v3/simple/price?ids=${Array.from(new Set(['tether',...symbols.map(s=>ids[s]).filter(Boolean)])).join(',')}&vs_currencies=usd,krw,eur&include_24hr_change=true`,runtime().COINGECKO_API_KEY?{'x-cg-demo-api-key':runtime().COINGECKO_API_KEY!}:undefined),
   symbols.includes('KRW')?json<{trade_price:number}[]>('https://api.upbit.com/v1/ticker?markets=KRW-USDT'):Promise.resolve([]),
  ]);
