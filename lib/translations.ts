@@ -66,6 +66,7 @@ export const english: Record<string, string> = {
   "자산 / 보유량": "Asset / Balance",
   "필터 초기화": "Reset filters",
   "자산을 누르면 상세 정보가 열립니다.": "Select an asset to view its details.",
+  "5 USDT 이하 자산은 숨김 · 총액과 비중에 포함": "Assets worth 5 USDT or less are hidden · Included in totals and allocation",
   "현재 비중과 목표": "Current allocation and target",
   "현재 비중을 참고 모델과 비교하고 차이를 확인하세요.": "Compare your allocation with a reference model.",
   "비중 비교하기": "Compare allocation",
